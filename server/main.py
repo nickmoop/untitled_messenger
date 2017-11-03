@@ -2,33 +2,37 @@ import datetime
 import threading
 from socket import *
 
+from test_python_client import connect, disconnect, send
 
 HOST = ''
 PORT = 50007
+TMP_PORT = 123
 
 
-def message_receive_callback_function(connection):
+def message_receive_callback_function(data, address):
     while True:
-        data = connection.recv(1024)
         if data:
-            print(data)
+            data_as_stirng = data.decode()
+            print('Received data: {}'.format(data_as_stirng))
+            socket_object = connect(address[0], TMP_PORT)
+            send(socket_object, message=data_as_stirng)
+            disconnect(socket_object)
 
 
 def dispatch_clients():
-    socket_object = socket(AF_INET, SOCK_STREAM)
+    socket_object = socket(AF_INET, SOCK_DGRAM)
     socket_object.bind((HOST, PORT))
-    socket_object.listen(5)
     print('Server listening on host: {}, and port: {}'.format(HOST, PORT))
     while True:
-        connection, address = socket_object.accept()
-
-        print('Server connected by {} at {}'.format(
-            address, datetime.datetime.now())
-        )
-        thread = threading.Thread(
-            target=message_receive_callback_function, args=(connection,)
-        )
-        thread.start()
+        data, address = socket_object.recvfrom(1024)
+        if address:
+            print('Server connected by {} at {}'.format(
+                address, datetime.datetime.now())
+            )
+            thread = threading.Thread(
+                target=message_receive_callback_function, args=(data, address, )
+            )
+            thread.start()
 
 
 if __name__ == '__main__':
