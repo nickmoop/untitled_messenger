@@ -36,7 +36,7 @@ if __name__ == '__main__':
     import time
 
     message_to_send = 'Test message for send to server'
-    if sys.argv[1]:
+    if len(sys.argv) >= 2:
         message_to_send = ' '.join(sys.argv[1:])
 
     test_socket = connect()
