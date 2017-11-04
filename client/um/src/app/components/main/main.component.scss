@@ -10,7 +10,7 @@ main,
 aside {
     padding: 1rem;
     display: grid;
-    grid-template-rows: 3rem 1fr 3rem;
+    grid-template-rows: minmax(3rem, auto) 1fr 3rem;
     nav {
         grid-row: 1;
     }
