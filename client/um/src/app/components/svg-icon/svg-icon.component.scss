@@ -1,0 +1,12 @@
+img, svg{
+  height: 100%;
+  width: 100%;
+}
+
+:host {
+  height: 100%;
+  width: 100%;
+    display: block;
+    position: relative;
+    margin: auto;
+}

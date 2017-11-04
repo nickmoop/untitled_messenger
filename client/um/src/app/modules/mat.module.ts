@@ -76,4 +76,4 @@ const modules = [
   imports: [...modules, BrowserAnimationsModule],
   exports: modules,
 })
-export class MDModule { }
+export class MatModule { }

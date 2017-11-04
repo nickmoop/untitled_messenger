@@ -1,7 +1,16 @@
-@import '../node_modules/normalize.css/normalize.css';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~normalize.css/normalize.css';
+@import './assets/scss/mat-theme.scss';
+@import './assets/scss/vars.scss';
+// @import url(https://fonts.googleapis.com/css?family=Jura:300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
 html,
 body {
-    height: 100%;
-    color: white;
+    height: 100%; // font-family: 'Jura', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; // color: $color-font;
+    // background: $color-bg;
+}
+
+.mat-icon-button um-svg-icon {
+    height: 24px;
 }

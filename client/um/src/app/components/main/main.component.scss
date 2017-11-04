@@ -1,30 +1,56 @@
-
+@import 'src/assets/scss/vars.scss';
 .grid {
     display: grid;
-    grid-gap: .1rem;
     grid-template-columns: 15rem 1fr;
     grid-template-rows: 1fr;
     height: 100%;
 }
 
+main,
+aside {
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 3rem 1fr 3rem;
+    nav {
+        grid-row: 1;
+    }
+    &>div {
+        grid-row: 2;
+    }
+    footer {
+        grid-row: 3;
+    }
+}
+
 aside {
     grid-row: 1;
     grid-column: 1;
-    background: darken(cyan, 40%);
-
+    box-shadow: 0.3rem 0 0.5rem transparentize(invert($color-bg), .7);
+    nav {
+        svg {
+            width: 2rem;
+        }
+        span {
+            display: inline-block;
+            top: -10px;
+            position: relative;
+        }
+        button {
+            position: relative;
+            left: 25px;
+        }
+        mat-form-field {
+            width: 100%;
+        }
+    }
+    footer {
+        button {
+            width: 50%;
+        }
+    }
 }
 
 main {
     grid-row: 1;
     grid-column: 2;
-    background: darken(cyan, 40%);
-
-    /* nav {
-  grid-row: 1;
-  grid-column: 1 / span 2;
-}
-footer {
-  grid-row: 3;
-  grid-column: 1 / span 2;
-} */
 }

@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+
+/* typography */
+
+$custom-typography: mat-typography-config(
+  $font-family:   'Roboto, "Helvetica Neue", sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 300),
+  $display-2:     mat-typography-level(45px, 48px, 300),
+  $display-1:     mat-typography-level(34px, 40px, 300),
+  $headline:      mat-typography-level(24px, 32px, 300),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 300),
+  $subheading-1:  mat-typography-level(15px, 24px, 300),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 300),
+  $caption:       mat-typography-level(12px, 20px, 300),
+  $button:        mat-typography-level(14px, 14px, 500),
+  $input:         mat-typography-level(16px, 1.125, 300)
+);
+@include mat-base-typography($custom-typography);
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);
+$candy-app-primary: mat-palette($mat-grey, 900);
+$candy-app-accent: mat-palette($mat-grey, A200, A100, A400);
+$candy-app-warn: mat-palette($mat-red);
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+@include angular-material-theme($candy-app-theme);

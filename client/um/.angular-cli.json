@@ -4,37 +4,38 @@
     "name": "um",
     "ejected": true
   },
-  "apps": [
-    {
-      "root": "src",
-      "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.app.json",
-      "prefix": "um",
-      "styles": [
-        "styles.scss"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
+  "apps": [{
+    "root": "src",
+    "outDir": "dist",
+    "assets": [
+      "assets",
+      "favicon.ico"
+    ],
+    "index": "index.html",
+    "main": "main.ts",
+    "polyfills": "polyfills.ts",
+    "tsconfig": "tsconfig.app.json",
+    "testTsconfig": "tsconfig.app.json",
+    "prefix": "um",
+    "styles": [
+      "styles.scss"
+    ],
+    "stylePreprocessorOptions": {
+      "includePaths": [
+        "assets/scss"
+      ]
+    },
+    "scripts": [],
+    "environmentSource": "environments/environment.ts",
+    "environments": {
+      "dev": "environments/environment.ts",
+      "prod": "environments/environment.prod.ts"
     }
-  ],
-  "lint": [
-    {
-      "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**"
-    }
-  ],
+  }],
+  "lint": [{
+    "project": "src/tsconfig.app.json",
+    "exclude": "**/node_modules/**"
+  }],
   "defaults": {
     "styleExt": "scss",
     "class": {

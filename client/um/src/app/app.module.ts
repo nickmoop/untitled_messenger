@@ -1,18 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MDModule } from './modules/md.module';
+import { MatModule } from './modules/mat.module';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
+import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    SvgIconComponent
   ],
   imports: [
     BrowserModule,
-    MDModule
+    MatModule
   ],
   providers: [],
   bootstrap: [AppComponent]

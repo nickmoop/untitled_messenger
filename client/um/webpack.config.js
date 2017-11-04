@@ -635,7 +635,7 @@ module.exports = {
             "options": {
               "sourceMap": false,
               "precision": 8,
-              "includePaths": []
+              "includePaths": ["assets/scss"]
             }
           }
         ]
@@ -748,7 +748,7 @@ module.exports = {
             "options": {
               "sourceMap": false,
               "precision": 8,
-              "includePaths": []
+              "includePaths": ["assets/scss"]
             }
           }
         ]
